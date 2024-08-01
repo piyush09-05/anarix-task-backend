@@ -129,7 +129,8 @@ Response:
 Setup
 1. Install Dependencies - npm install
 3. build - npx tsc -b
-4. run - node dist/index.js
+4. run - node dist/app.js
+   
 
 
   
