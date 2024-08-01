@@ -8,6 +8,8 @@ import mongoose from "mongoose";
 import Event from "./Models/Event";
 import Booking from "./Models/Booking";
 
+import { generateTicketHTML } from "./util/generateTicket";
+
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -60,6 +62,31 @@ app.post('/bookings', validateBooking, async (req, res) => {
         await session.abortTransaction();
         session.endSession();
         console.error('Error booking tickets:', error);
+        res.status(500).send({ message: 'Internal Server Error' });
+    }
+});
+
+app.post('/print-ticket', async (req, res) => {
+    try {
+        const { bookingId } = req.body;
+
+        const booking = await Booking.findById(bookingId).populate('eventId');
+        if (!booking) {
+            return res.status(404).send({ message: 'Booking not found.' });
+        }
+
+        const event = booking.eventId;
+        const html = generateTicketHTML(booking, event);
+
+        res.status(200).send({
+            json: {
+                event,
+                booking
+            },
+            html
+        });
+    } catch (error) {
+        console.error('Error printing ticket:', error);
         res.status(500).send({ message: 'Internal Server Error' });
     }
 });
