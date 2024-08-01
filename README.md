@@ -128,7 +128,7 @@ Response:
 
 Setup
 1. Install Dependencies
-2. nodemon server.ts
+2. nodemon index.ts
 
 
   
