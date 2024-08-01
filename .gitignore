@@ -1,0 +1,55 @@
+# Node modules
+/node_modules/
+
+# TypeScript build output
+/dist/
+/build/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# IDEs and Editors
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Coverage directory used by testing tools
+coverage/
+
+# MongoDB data
+data/
+
+# Build directories
+build/
+dist/
+
+# Yarn integrity file
+.yarn-integrity
+
+# npm lock file
+package-lock.json
+
+# Yarn lock file
+yarn.lock
+
+# TypeScript generated files
+*.tsbuildinfo
