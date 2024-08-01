@@ -53,3 +53,4 @@ yarn.lock
 
 # TypeScript generated files
 *.tsbuildinfo
+.vercel

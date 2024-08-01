@@ -10,6 +10,10 @@ dotenv.config();
 
 const app : express.Application = express();
 
+app.get("/", (req,res) => {
+    res.send("Hello World!!!")
+})
+
 app.use(express.json());
 
 app.use(eventRoutes);
@@ -24,3 +28,5 @@ app.listen(PORT, async () => {
         console.error('Failed to connect to the database. Server not started.');
     }
 });
+
+export default app;
