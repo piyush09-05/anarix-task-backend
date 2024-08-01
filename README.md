@@ -127,8 +127,9 @@ Response:
 
 
 Setup
-1. Install Dependencies
-2. nodemon index.ts
+1. Install Dependencies - npm install
+3. build - npx tsc -b
+4. run - node dist/index.js
 
 
   
